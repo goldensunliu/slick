@@ -356,7 +356,8 @@
             asNavFor.each(function() {
                 var target = $(this).slick('getSlick');
                 if(!target.unslicked) {
-                    target.slideHandler(index, true);
+                    var dontAnimate = target.slideCount <= target.options.slidesToShow;
+                    target.slideHandler(index, true, dontAnimate); 
                 }
             });
         }
